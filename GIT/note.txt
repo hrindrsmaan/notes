@@ -1,0 +1,165 @@
+GIT
+---
+
+GIT is a distributed version control system.
+
+1) How to set up git on your machine.
+	
+   After installation, do following:
+
+   CHECK VERSION OF GIT:
+   		git --version
+
+   	SET UP CONFIG VALUES:
+   		git config --global user.name "Harinder Singh"
+   		git config --global user.email "hrinder.maan@gmail.com"
+
+   		git config --list
+
+   	HOW TO EDIT CONFIG VALUES
+
+   		git config --global --edit
+
+2) How to use GIT?
+
+   INITIALIZE A REPOSITORY FROM EXISTING CODE:
+   		git init
+
+   BEFORE FIRST COMMIT:
+   		git status
+
+
+   ADD GITIGNORE FILE:
+   touch gitignore and add following content to it.
+   *.pyc
+
+   STAGING AREA - It is the area where we decide which files will be commited.
+
+   ADD FILES TO STAGING AREA:
+   		git add -A  #adds all the untracked files to the staging area
+   		git status
+
+   REMOVE FILES FROM THE STAGING AREA:
+   		git reset
+   		git status
+
+   OUR FIRST COMMIT:
+
+   		git add -A
+
+   		git commit -m "Initial Commit"
+
+   		git status
+
+   		git log
+
+
+3) CLONING A REMOTE REPO
+	
+		git clone <url> <where to clone>
+
+		git clone ../remote_repo.git .
+
+   
+   VIEWING INFORMATION ABOUT THE REMOTE REPOSITORY
+
+   		git remote -v
+
+   		git branch -a
+
+
+4) PUSHING CHANGES TO THE REMOTE RESPOSITORY
+
+   		git diff #It will show me the changes that have been made to the code
+
+   		git status
+
+   		git add -A
+
+   		git commit -m  ""
+
+   		Now we have commited the files locally and now we have to push the changes to the remote repository so that others can see the schanges.
+
+        PUSH CHANGES:
+
+   		git pull origin master
+
+   		git push origin master
+
+
+5) COMMON WORKFLOW
+
+	1) CREATE A BRANCH FOR DESIRED FEATURE
+
+			git branch branch_name
+
+			git checkout branch_name
+
+
+	2) AFTER COMMIT PUSH BRANCH TO REMOTE REPOSITORY
+
+			git push -u origin target_branch
+
+			git branch -a
+
+
+	3) MERGE BRANCH WITH MASTER
+
+			git checkout master
+
+			git pull origin master
+
+			git branch --merged
+
+			git merge calc-divide
+
+			git push origin master
+
+
+
+    4) DELETING A BRANCH
+
+    		git branch --merged
+
+    		git branch -d calc-divide
+
+    		git branch -a
+
+    		git push origin --delete cal-divide  #deletes calc-divide from remote repository
+
+
+
+    FIXING COMMON MISTAKES AND UNDOING BAD COMMITS
+
+    1) Writing below command restores file previous state:
+          git checkout calc.py
+
+
+
+    2) How to edit commit message after the actual commit:
+          git commit --amend -m "msg"
+
+
+    3) How to move commit from one branch to another:
+
+          git checkout subtract-feature
+
+          git cherry-pick <commit_hash>
+
+          git log
+
+          Delete commit from last branch:
+
+          git checkout master
+
+          git reset --soft <commit_hash>    (--mixed and --hard)
+
+          git clean -df
+
+
+    4)  git reflog 
+        Lists all the commits we have done so far.
+
+
+	PUSH AN EXISTING REPOSITRY FROM COMMAND LINE TO REMOTE:
+		git remote add origin <git_clone_link>
