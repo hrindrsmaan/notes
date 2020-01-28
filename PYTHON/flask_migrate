@@ -1,0 +1,25 @@
+flask_migrate
+-------------
+
+flask_migrate is an extension from flask to dynamically make changes in the databases tables.
+
+pip3 install flask_migrate
+
+from flask_migrate import Migrate, MigrateCommand
+from flask_script import Manager
+
+manager = Manager(app)
+
+migrate = Migrate(app, db)
+
+manager.add_command("dbase", MigrateCommand)
+
+
+Three IMP commands
+------------------
+
+python3 manage.py db init
+
+python3 manage.py db migrate
+
+python3 manage.py db upgrade

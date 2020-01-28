@@ -1,0 +1,43 @@
+How to do unittesting
+---------------------
+
+1) Create file tests.py
+
+open tests.py
+
+1) Set the path
+
+2) import necessary things 
+
+
+
+
+def setUp(self):
+	set up database
+	app.config['TESTING'] = True //It tells flask that its running under testing mode
+	app.config['WTF_CSRF_ENABLED'] = False
+	app.config['BLOG_DATABASE_NAME'] = 'test_blog'
+	app.config['SQLALCHEMY_DATABASE_URI'] = self.db_uri + app.config['BLOG_DATABASE_NAME']
+
+	engine = sqlalchemy.create_engine(self.db_uri)
+	conn = engine.connect()
+	conn.execute("commit")
+	conn.execute("CREATE DATABASE "+app.config['BLOG_DATABASE_NAME'])
+	db.create_all()
+	conn.close()
+
+	self.app = app.test_client()
+
+
+def tearDown(self):
+	
+	db.session.remove()
+
+	engine = sqlalchemy.create_engine(self.db_uri)
+	conn = engine.connect()
+	conn.execute("commit")
+	conn.execute("DROP DATABASE "+app.config['BLOG_DATABASE_NAME'])
+	conn.close()
+
+
+

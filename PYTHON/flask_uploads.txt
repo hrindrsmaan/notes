@@ -1,0 +1,28 @@
+Uploading Files into server using FLASK-UPLOAD
+----------------------------------------------
+
+
+Flask provides an extension known as flask-uploads which can be used to upload files over server.
+
+
+STEP 1:
+	pip install flask-uploads
+
+STEP 2:
+	from flask_uploads import UploadSet, IMAGES, configure_uploads
+
+STEP 3:
+	app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
+	photos = UploadSet('photos', IMAGES) #IMAGES is the type of file that will be uploaded
+
+	configure_uploads(app, photos)
+
+STEP 4:
+	filename = photos.save(request.files['photo'])
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+Questions I'd ask a backend python person:
+
+1) Tell me about async await and how would your code benefit from coroutines
+
+2) Tell me about REST.
+
+3) Tell me for scenario 1/2/3 what you think a good semantic URI schema should be for the API endpoints.
+
+4) Swagger or HATEOAS and why? (Explain your personal preference)
+
+5) Tell me about best practices for JSON Schema for above scenarios.
+
+6) When you're doing an Update do you use PUT vs PATCH, how and why? (Explain your personal preference)
+
+7) On errors do you prefer to return 4xx codes or do what Facebook does? (Explain why).
+
+8) What oAuth2 library did you use with your Django project?
+
+9) What kind of database (relational, document, keystore, or graph) for what kind of uses cases? Examples would help. (Like writing a procure-to-pay 	app - maybe document stores make the most sense since they map to the business concept of invoices/purchase orders/goods receipt/payment vouchers 	nicely, and Mongo can do ACID now.).
+
+10) What are your favorite queueing and caching platforms and why? (Redis vs. Memcached, Redis vs. RabbitMQ, Celery vs. Pika)
+
+11) What is your favorite CI/CD platform? (e.g. Jenkins vs. Travis CI)
+
+12) Docker Swarm vs. Kubernetes
