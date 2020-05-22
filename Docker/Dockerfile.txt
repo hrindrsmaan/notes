@@ -1,0 +1,5 @@
+Dcoker File Notes
+-----------------
+
+1) What is a Dockerfile?
+   Dockerfile contains some text instructions to build an image.Moreover, Docker file is used to create your own Docker Images.

@@ -1,0 +1,58 @@
+Imp Commands for Docker
+-----------------------
+
+docker run  = docker create + docker start
+
+
+docker run hello-world
+
+
+docker run busybox
+docker run busybox echo hello harry
+docker run busybox ls
+
+docker ps  - Its shows all the containers running
+docker ps --all
+
+
+
+docker create hello-world
+
+docker start -a 56496df2cc62d2f194047121f35bb32ae5da499608ecef7906a073d13223d565
+
+
+commands for flask-blog
+-----------------------
+
+docker run --name db -e MYSQL_ROOT_PASSWORD=test -d -p 8000:8000 mariadb
+
+docker run --name mysql-client -it --link db:mysql --rm mariadb sh -c 'exec mysql -uroot -ptest -hmysql'
+
+
+
+It runs the container flask_blog_aws:
+docker run -id -p 5000:5000 -v /home/harinder/Documents/flask_projects/flask_blog_aws:/opt/flask_blog_aws --name blog --link db:mysql flask_blog_aws bash 
+
+docker exec -it blog bash
+
+
+
+How to remove a container:
+docker container rm <container_id>
+
+See all the containers that are running:
+docker ps 
+
+See all the images that are running or not running:
+docker ps -a
+
+
+See the docker file in the current directry and build it.
+docker build -t flask_blog_aws .
+
+Start a container that is not running:
+docker start <name_of_container>
+
+
+
+

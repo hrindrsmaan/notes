@@ -1,0 +1,207 @@
+MYSQL Queries
+-------------
+
+
+1) ORDER BY
+	
+	This is used display information either in ascending or descending order.
+	ASC - This sorts the record in ascending order. (DEFAULT)
+	DESC - This sorts the record in descending order.
+
+	SYNTAX:
+
+	SELECT * from table_name ORDER BY column_name DESC;
+
+
+2) GROUP BY
+
+	The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) 
+	to group the result-set by one or more columns.
+
+	It is used to group data on the basis of particular column.
+
+	SYNTAX:
+
+	SELECT column_name(s)
+	FROM table_name
+	WHERE condition
+	GROUP BY column_name(s)
+	ORDER BY column_name(s);
+
+
+3) HAVING 
+
+	The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+
+	Once you have a GROUP BY clause, you can filter it more by using HAVING clause.
+
+
+	SYNTAX:
+
+	SELECT column_name(s)
+	FROM table_name
+	WHERE condition
+	GROUP BY column_name(s)
+	HAVING condition
+	ORDER BY column_name(s);
+
+
+
+4) UPDATE
+
+	The UPDATE statement is used to modify the existing records in a table.
+
+	UPDATE table_name
+	SET column1 = value1, column2 = value2, ...
+	WHERE condition;
+
+
+
+5) ALTER TABLE
+
+	The ALTER TABLE command is used to add, delete, or modify columns in an existing table.
+
+	The ALTER TABLE command is also used to add and drop various constraints on an existing table.
+
+
+	a) To add a column in a table, use the following syntax:
+
+	   ALTER TABLE table_name
+	   ADD column_name datatype;
+
+
+	b)	To delete a column in a table, use the following syntax:
+
+	    ALTER TABLE table_name
+	    DROP COLUMN column_name;
+
+
+	c)	To modify the data type of a column in a table, use the following syntax:
+
+		ALTER TABLE table_name
+		ALTER COLUMN column_name datatype;
+
+
+
+6) DROP TABLE
+	
+   The DROP TABLE statement is used to drop an existing table in a database. 
+
+   DROP TABLE table_name;
+
+
+
+7) DELETE 
+	
+   The DELETE statement is used to delete existing records in a table.
+	
+   DELETE FROM table_name WHERE condition;
+
+
+	
+8) AND, OR and NOT
+
+	
+   The AND and OR operators are used to filter records based on more than one condition:
+
+   The AND operator displays a record if all the conditions separated by AND are TRUE.
+
+   		SELECT column1, column2, ...
+		FROM table_name
+		WHERE condition1 AND condition2 AND condition3 ...;
+
+
+
+   The OR operator displays a record if any of the conditions separated by OR is TRUE.
+
+   		SELECT column1, column2, ...
+		FROM table_name
+		WHERE condition1 OR condition2 OR condition3 ...;
+
+
+
+   The NOT operator displays a record if the condition(s) is NOT TRUE.
+
+   		SELECT column1, column2, ...
+		FROM table_name
+		WHERE NOT condition;
+
+
+9) LIKE
+	
+	The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+	There are two wildcards often used in conjunction with the LIKE operator:
+
+		% - The percent sign represents zero, one, or multiple characters
+		_ - The underscore represents a single character
+
+
+
+10) IN
+
+	The IN operator allows you to specify multiple values in a WHERE clause.
+
+	The IN operator is a shorthand for multiple OR conditions.
+
+
+11) BETWEEN
+	
+	The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+
+	The BETWEEN operator is inclusive: begin and end values are included. 
+
+	SELECT column_name(s)
+	FROM table_name
+	WHERE column_name BETWEEN value1 AND value2;
+
+
+12) Aliases
+	
+	SQL aliases are used to give a table, or a column in a table, a temporary name.
+
+	Aliases are often used to make column names more readable.
+
+	An alias only exists for the duration of the query.
+
+	SELECT column_name AS alias_name
+	FROM table_name;
+	
+
+13) Aggregate Functions 
+	
+	COUNT, AVG, MAX, MIN, SUM
+	
+
+14) DDL (Data Definition Language) Commands in SQL:
+	
+	CREATE
+	ALTER
+	DROP
+
+15) DML (Data Manipulation Language) Commands in SQL:
+	
+	SELECT
+	INSERT
+	UPDATE
+	DELETE
+
+16) DCL (Data Control Language) Commnads in SQL:
+
+	
+	GRANT
+	REVOKE
+
+17) NULL 
+	
+	A NULL value is not same as zero or a blank space. A NULL value is a value which is ‘unavailable, unassigned, unknown or not applicable’. Whereas, zero is a number and blank space is a character.
+
+
+18) TRUNCATE TABLE
+	
+	TRUNCATE TABLE is used to delete complete data from the table.
+
+
+
+
+
