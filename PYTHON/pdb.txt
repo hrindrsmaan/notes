@@ -1,0 +1,20 @@
+pdb is the python debugger.
+
+
+How to use pdb:
+
+import pdb
+
+pdb.set_trace()
+
+n = takes execution to the next line.
+
+l - list
+c - continue
+s - step
+r - return
+b - break
+
+How to quit pdb ?
+
+q - quits the pdb debugger.
