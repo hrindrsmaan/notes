@@ -1,0 +1,36 @@
+
+Pagination
+----------
+
+Pagination is a functionality from python-flask that helps to divide 
+large amount of data into multiple pages and those pages can be accessed through pagination methods.
+
+
+How to paginate ?
+
+posts = Post.query.paginate(current_page, POST_PER_PAGE, False)
+
+
+#This gives total no. of pages
+posts.pages
+
+
+#This gives current page
+Posts.page
+
+
+#This gives items in the paginate object
+for item in posts.items:
+	print(item.title)
+
+
+
+#This access the pages
+for page in posts.iter_pages():
+	
+	if page:
+		print(page)
+	else:
+		print('...')
+
+
